@@ -1,9 +1,5 @@
 ARG CUDA_VERSION=12.4.0
-ARG CUDA_ARCHITECTURES=86;89;90
 ARG OS_VERSION=22.04
-ARG TORCH_CUDA_ARCH_LIST=8.6;8.9;9.0
-
-
 
 # Pull micromamba
 FROM mambaorg/micromamba:1.5.10 AS micromamba
@@ -38,7 +34,8 @@ ENTRYPOINT ["/usr/local/bin/_entrypoint.sh"]
 
 CMD ["/bin/bash"]
 
-
+ARG CUDA_ARCHITECTURES=86;89;90
+ARG TORCH_CUDA_ARCH_LIST=8.6;8.9;9.0
 
 # Cuda Environment Variables
 ENV CUDA_HOME="/usr/local/cuda"
