@@ -52,7 +52,7 @@ ENV TZ=Etc/UTC
 USER root
 
 # Install common tools
-RUN apt update --fix-missing && apt install -y wget gnupg2 git cmake curl unzip
+RUN apt update --fix-missing && apt install -y wget gnupg2 git cmake curl unzip screen
 RUN apt install -y python3 python3-pip python3-venv \
 libglew-dev libgl1-mesa-dev libglib2.0-0 libopencv-dev protobuf-compiler libgoogle-glog-dev libboost-all-dev libhdf5-dev libatlas-base-dev \
 xvfb
